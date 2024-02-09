@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 1048;
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 let expressSwagger = require("express-swagger-generator")(app);
@@ -18,7 +19,8 @@ let options = {
             title: "Api personnelle pour mon Portfolio",
             version: "1.0.0",
         },
-        host: "localhost:" + PORT,
+        // host: "localhost:" + PORT,
+        host: "node6.adky.net:1048",
         basePath: "/v1",
         produces: ["application/json", "application/xml"],
         schemes: ["http", "https"],
