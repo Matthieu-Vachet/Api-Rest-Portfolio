@@ -6,7 +6,13 @@ const User = require("../models/createUser");
  * @typedef User
  * @property {string} name.required - Le nom de l'utilisateur
  * @property {string} lastname.required - Le nom de famille de l'utilisateur
+ * @property {string} profession.required - La profession de l'utilisateur
  * @property {integer} age.required - L'âge de l'utilisateur
+ * @property {string} adress.required - L'adresse de l'utilisateur
+ * @property {integer} cp.required - Le code postal de l'utilisateur
+ * @property {string} city.required - La ville de l'utilisateur
+ * @property {string} pays.required - Le pays de l'utilisateur
+ * @property {string} number.required - Le numéro de téléphone de l'utilisateur
  * @property {string} email.required - L'email de l'utilisateur
  * @property {string} password.required - Le mot de passe de l'utilisateur
  */
