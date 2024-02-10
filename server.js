@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 1048;
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const projetRoutes = require("./routes/projetsRoutes");
+const experienceRoutes = require("./routes/experienceRoutes");
 let expressSwagger = require("express-swagger-generator")(app);
 
 app.use(express.json());
@@ -35,5 +36,6 @@ expressSwagger(options);
 // Use routes
 app.use("/Api/v1/users", userRoutes);
 app.use("/Api/v1/projets", projetRoutes);
+app.use("/Api/v1/experiences", experienceRoutes);
 
 app.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`));
