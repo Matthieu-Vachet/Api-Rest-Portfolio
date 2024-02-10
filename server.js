@@ -4,6 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 1048;
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
+const projetRoutes = require("./routes/projetsRoutes");
 let expressSwagger = require("express-swagger-generator")(app);
 
 app.use(express.json());
@@ -20,9 +21,9 @@ let options = {
             title: "Api personnelle pour mon Portfolio",
             version: "1.0.0",
         },
-        // host: "localhost:" + PORT,
-        host: "node6.adky.net:1048",
-        basePath: "/v1",
+        host: "localhost:" + PORT,
+        // host: "node6.adky.net:1048",
+        basePath: "v1",
         produces: ["application/json", "application/xml"],
         schemes: ["http", "https"],
     },
@@ -31,7 +32,8 @@ let options = {
 };
 expressSwagger(options);
 
-// Use user routes
-app.use("/v1/users", userRoutes);
+// Use routes
+app.use("/Api/v1/users", userRoutes);
+app.use("/Api/v1/projets", projetRoutes);
 
 app.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`));
