@@ -12,6 +12,7 @@ app.use(express.json());
 connectDB();
 
 // Swagger configuration
+// http://node6.adky.net:1048/api-docs
 let options = {
     swaggerDefinition: {
         info: {

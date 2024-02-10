@@ -9,8 +9,32 @@ const createUser = mongoose.Schema({
         type: String,
         required: true,
     },
+    profession: {
+        type: String,
+        required: true,
+    },
     age: {
         type: Number,
+        required: true,
+    },
+    adress: {
+        type: String,
+        required: true,
+    },
+    cp: {
+        type: Number,
+        required: true,
+    },
+    city: {
+        type: String,
+        required: true,
+    },
+    pays: {
+        type: String,
+        required: true,
+    },
+    number: {
+        type: String,
         required: true,
     },
     email: {
