@@ -19,7 +19,7 @@ const User = require("../models/createUser");
 
 /**
  * Récupère tous les utilisateurs
- * @route GET /v1/users/
+ * @route GET /Api/v1/users/
  * @group Utilisateurs - Opérations sur l'utilisateur
  * @returns {Array.<object>} 200 - Un tableau d'utilisateurs
  * @returns {Error} 400 - ID utilisateur non valide
@@ -48,7 +48,7 @@ router.get("/", async (req, res) => {
 
 /**
  * Crée un nouvel utilisateur
- * @route POST /v1/users/create
+ * @route POST /Api/v1/users/create
  * @group Utilisateurs - Opérations sur l'utilisateur
  * @param {User.model} user.body.required - Les informations de l'utilisateur à créer
  * @returns {string} 201 - Nouvel utilisateur créé avec succès
@@ -83,7 +83,7 @@ router.post("/create", async (req, res) => {
 
 /**
  * Met à jour un utilisateur
- * @route PUT /v1/users/update/{id}
+ * @route PUT /Api/v1/users/update/{id}
  * @group Utilisateurs - Opérations sur l'utilisateur
  * @param {string} id.path.required - ID de l'utilisateur
  * @param {User.model} user.body.required - Les informations de l'utilisateur à mettre à jour
@@ -122,7 +122,7 @@ router.put("/update/:id", async (req, res) => {
 
 /**
  * Supprime un utilisateur
- * @route DELETE /v1/users/delete/{id}
+ * @route DELETE /Api/v1/users/delete/{id}
  * @group Utilisateurs - Opérations sur l'utilisateur
  * @param {string} id.path.required - ID de l'utilisateur
  * @returns {string} 200 - Utilisateur supprimé avec succès
