@@ -10,8 +10,8 @@ const createUser = mongoose.Schema({
         required: true,
     },
     profession: {
-        type: String,
-        required: true,
+        fr: { type: String, required: true },
+        en: { type: String, required: true },
     },
     age: {
         type: Number,
@@ -30,18 +30,14 @@ const createUser = mongoose.Schema({
         required: true,
     },
     pays: {
-        type: String,
-        required: true,
+        fr: { type: String, required: true },
+        en: { type: String, required: true },
     },
     number: {
         type: String,
         required: true,
     },
     email: {
-        type: String,
-        required: true,
-    },
-    password: {
         type: String,
         required: true,
     },
