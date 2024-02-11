@@ -2,20 +2,20 @@ const mongoose = require("mongoose");
 
 const createProjet = mongoose.Schema({
     name: {
-        type: String,
-        required: true,
+        "fr": { type: String, required: true },
+        "en": { type: String, required: true },
     },
     description: {
-        type: String,
-        required: true,
+        "fr": { type: String, required: true },
+        "en": { type: String, required: true },
     },
     imageUrl: {
         type: String,
         required: true,
     },
     category: {
-        type: String,
-        required: true,
+        "fr": { type: String, required: true },
+        "en": { type: String, required: true },
     },
     githubLink: {
         type: String,
