@@ -5,9 +5,15 @@ const Projet = require("../models/createProjet");
 /**
  * @typedef Projet
  * @property {string} name.required - Le nom du projet
+ * @property {string} name.fr.required - Le nom du projet en français
+ * @property {string} name.en.required - Le nom du projet en anglais
  * @property {string} description.required - La description du projet
+ * @property {string} description.fr.required - La description du projet en français
+ * @property {string} description.en.required - La description du projet en anglais
  * @property {string} imageUrl.required - L'url de l'image du projet
  * @property {string} category.required - La catégorie du projet
+ * @property {string} category.fr.required - La catégorie du projet en français
+ * @property {string} category.en.required - La catégorie du projet en anglais
  * @property {string} githubLink.required - Le lien du projet sur GitHub
  * @property {string} demoLink.required - Le lien de démonstration du projet
  * @property {Array.<string>} technologies.required - Les technologies utilisées pour le projet
@@ -52,10 +58,19 @@ router.get("/", async (req, res) => {
 router.post("/create", async (req, res) => {
     try {
         const projet = new Projet({
-            name: req.body.name,
-            description: req.body.description,
+            name: {
+                fr: req.body.name.fr,
+                en: req.body.name.en,
+            },
+            description: {
+                fr: req.body.description.fr,
+                en: req.body.description.en,
+            },
             imageUrl: req.body.imageUrl,
-            category: req.body.category,
+            category: {
+                fr: req.body.category.fr,
+                en: req.body.category.en,
+            },
             githubLink: req.body.githubLink,
             demoLink: req.body.demoLink,
             technologies: req.body.technologies,
