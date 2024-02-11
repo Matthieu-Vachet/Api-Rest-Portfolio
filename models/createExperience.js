@@ -2,16 +2,16 @@ const mongoose = require("mongoose");
 
 const createExperience = mongoose.Schema({
     title: {
-        type: String,
-        required: true,
+        fr: { type: String, required: true },
+        en: { type: String, required: true },
     },
     school: {
-        type: String,
-        required: true,
+        fr: { type: String, required: true },
+        en: { type: String, required: true },
     },
     location: {
-        type: String,
-        required: true,
+        fr: { type: String, required: true },
+        en: { type: String, required: true },
     },
     startDate: {
         type: String,
@@ -22,10 +22,18 @@ const createExperience = mongoose.Schema({
         required: true,
     },
     description: {
-        type: String,
-        required: true,
+        fr: { type: String, required: true },
+        en: { type: String, required: true },
     },
     diplome: {
+        fr: { type: String, required: true },
+        en: { type: String, required: true },
+    },
+    technologies: {
+        type: [String],
+        required: true,
+    },
+    link: {
         type: String,
         required: true,
     },

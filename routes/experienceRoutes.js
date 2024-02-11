@@ -4,13 +4,25 @@ const Experience = require("../models/createExperience");
 
 /**
  * @typedef Experience
- * @property {string} title.required - Le titre de l'expérience
- * @property {string} school.required - Le nom de l'école
- * @property {string} location.required - L'emplacement de l'école
+ * @property {object} title.required - Le titre de l'expérience
+ * @property {string} title.fr.required - Le titre de l'expérience en français
+ * @property {string} title.en.required - Le titre de l'expérience en anglais
+ * @property {object} school.required - L'école de l'expérience
+ * @property {string} school.fr.required - L'école de l'expérience en français
+ * @property {string} school.en.required - L'école de l'expérience en anglais
+ * @property {object} location.required - Le lieu de l'expérience
+ * @property {string} location.fr.required - Le lieu de l'expérience en français
+ * @property {string} location.en.required - Le lieu de l'expérience en anglais
  * @property {string} startDate.required - La date de début de l'expérience
  * @property {string} endDate.required - La date de fin de l'expérience
- * @property {string} description.required - La description de l'expérience
- * @property {string} diplome.required - Le diplôme obtenu
+ * @property {object} description.required - La description de l'expérience
+ * @property {string} description.fr.required - La description de l'expérience en français
+ * @property {string} description.en.required - La description de l'expérience en anglais
+ * @property {object} diplome.required - Le diplôme de l'expérience
+ * @property {string} diplome.fr.required - Le diplôme de l'expérience en français
+ * @property {string} diplome.en.required - Le diplôme de l'expérience en anglais
+ * @property {Array.<string>} technologies.required - Les technologies utilisées pour l'expérience
+ * @property {string} link.required - Le lien du diplôme
  */
 
 /**
@@ -52,18 +64,35 @@ router.get("/", async (req, res) => {
 router.post("/create", async (req, res) => {
     try {
         const experience = new Experience({
-            title: req.body.title,
-            school: req.body.school,
-            location: req.body.location,
+            title: {
+                fr: req.body.title.fr,
+                en: req.body.title.en,
+            },
+            school: {
+                fr: req.body.school.fr,
+                en: req.body.school.en,
+            },
+            location: {
+                fr: req.body.location.fr,
+                en: req.body.location.en,
+            },
             startDate: req.body.startDate,
             endDate: req.body.endDate,
-            description: req.body.description,
-            diplome: req.body.diplome,
+            description: {
+                fr: req.body.description.fr,
+                en: req.body.description.en,
+            },
+            diplome: {
+                fr: req.body.diplome.fr,
+                en: req.body.diplome.en,
+            },
+            technologies: req.body.technologies,
+            link: req.body.link,
         });
         await experience.save();
         return res.status(201).send("Nouvelle expérience créée avec succès");
     } catch (error) {
-        console.log(error);
+        console.error(error);
         if (error.name === "ValidationError") {
             return res.status(400).send({ message: "Erreurs de validation" });
         } else {
