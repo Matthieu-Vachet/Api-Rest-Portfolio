@@ -9,7 +9,7 @@ const experienceRoutes = require("./routes/experienceRoutes");
 const cors = require("cors");
 let expressSwagger = require("express-swagger-generator")(app);
 
-app.use(cors());
+app.use(express.json());
 
 // Ajout des en-têtes CORS
 app.use((req, res, next) => {
