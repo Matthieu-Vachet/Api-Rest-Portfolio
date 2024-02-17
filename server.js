@@ -6,9 +6,10 @@ const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const projetRoutes = require("./routes/projetsRoutes");
 const experienceRoutes = require("./routes/experienceRoutes");
+const cors = require("cors");
 let expressSwagger = require("express-swagger-generator")(app);
 
-app.use(express.json());
+app.use(cors());
 
 // Ajout des en-têtes CORS
 app.use((req, res, next) => {
