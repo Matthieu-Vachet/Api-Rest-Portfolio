@@ -1,8 +1,11 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 // const PORT = process.env.PORT || 3000;
 const PORT = process.env.PORT || 1048;
+const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET;
 const connectDB = require("./config/db");
+const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const projetRoutes = require("./routes/projetsRoutes");
 const experienceRoutes = require("./routes/experienceRoutes");
@@ -10,6 +13,7 @@ const cors = require("cors");
 let expressSwagger = require("express-swagger-generator")(app);
 
 app.use(cors());
+app.use(bodyParser.json());
 
 // Ajout des en-têtes CORS
 app.use((req, res, next) => {
@@ -46,6 +50,7 @@ let options = {
 expressSwagger(options);
 
 // Use routes
+app.use("/Api/v1/auth", authRoutes);
 app.use("/Api/v1/users", userRoutes);
 app.use("/Api/v1/projets", projetRoutes);
 app.use("/Api/v1/experiences", experienceRoutes);
