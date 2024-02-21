@@ -41,10 +41,14 @@ const createUser = mongoose.Schema({
         type: String,
         required: true,
     },
+    password: {
+        type: String,
+        required: true,
+    },
 });
 
-createUser.methods.toLocalString = function () {
-    return this.created_at.toLocalString();
+createUser.methods.toLocaleString = function () {
+    return this.created_at.toLocaleString();
 };
 
 module.exports = mongoose.model("User", createUser);
