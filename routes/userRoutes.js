@@ -18,6 +18,7 @@ const User = require("../models/createUser");
  * @property {string} pays.en.required - Le pays de l'utilisateur en anglais
  * @property {string} number.required - Le numéro de téléphone de l'utilisateur
  * @property {string} email.required - L'email de l'utilisateur
+ * @property {string} password.required - Le mot de passe de l'utilisateur
  */
 
 /**
