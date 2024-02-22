@@ -26,6 +26,11 @@ app.use((req, res, next) => {
     next();
 });
 
+// Message acceuil
+app.get("/", (req, res) => {
+    res.send("Welcome to my Portfolio API");
+});
+
 // Connect to database
 connectDB();
 
