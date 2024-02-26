@@ -23,6 +23,7 @@ const Experience = require("../models/createExperience");
  * @property {string} diplome.en.required - Le diplôme de l'expérience en anglais
  * @property {Array.<string>} technologies.required - Les technologies utilisées pour l'expérience
  * @property {string} link.required - Le lien du diplôme
+ * @property {string} img.required - L'image de l'expérience
  */
 
 /**
@@ -88,6 +89,7 @@ router.post("/create", async (req, res) => {
             },
             technologies: req.body.technologies,
             link: req.body.link,
+            img: req.body.img,
         });
         await experience.save();
         return res.status(201).send("Nouvelle expérience créée avec succès");
