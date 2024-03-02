@@ -19,6 +19,7 @@ const User = require("../models/createUser"); // Assurez-vous de remplacer '../m
  * @returns {Error} 401 - Adresse email ou mot de passe incorrect
  * @returns {Error} 500 - Erreur serveur lors de l'authentification
  */
+
 // Endpoint pour l'authentification des utilisateurs
 router.post("/login", async (req, res) => {
     // Récupérer les identifiants fournis par l'utilisateur
@@ -45,4 +46,4 @@ router.post("/login", async (req, res) => {
     }
 });
 
-module.exports = router; // N'oubliez pas d'exporter le routeur
+module.exports = router;

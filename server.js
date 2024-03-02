@@ -44,7 +44,7 @@ let options = {
             version: "1.0.0",
         },
         // host: "localhost:" + PORT,
-        host: "node6.adky.net:1048",
+        host: "api-rest-portfolio-mauve.vercel.app",
         basePath: "v1",
         produces: ["application/json", "application/xml"],
         schemes: ["http", "https"],
